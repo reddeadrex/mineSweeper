@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=row\ column
+comment0.target=Board(int,\ int)
+comment1.params=
+comment1.target=boolean\ checkBoard()
+comment2.params=
+comment2.target=void\ getBoard()
+numComments=3
