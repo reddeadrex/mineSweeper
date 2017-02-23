@@ -1,18 +1,12 @@
 #BlueJ class context
 comment0.params=
-comment0.target=int\ getCovered()
+comment0.target=Tile()
 comment1.params=
-comment1.target=int\ getMarked()
+comment1.target=int\ getCovered()
 comment2.params=
-comment2.target=int\ uncocered()
+comment2.target=int\ getMarked()
 comment3.params=
-comment3.target=int\ adjacentMine()
+comment3.target=int\ uncocered()
 comment4.params=
 comment4.target=boolean\ checkCurrentState()
-comment5.params=
-comment5.target=void\ setTileIsCovered()
-comment6.params=
-comment6.target=void\ setTileMarked()
-comment7.params=
-comment7.target=void\ setTileUncovered()
-numComments=8
+numComments=5

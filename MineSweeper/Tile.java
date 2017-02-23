@@ -2,15 +2,24 @@
 //Tile
 public class Tile 
 {
-    private int covered = 0;
-    private int marked = 1;
-    private int uncovered = 2;
-    private int adjacentMine = (int) (8 * Math.random() + 1);
-    private int[] tile = new int[1];
+    private int covered;
+    private int marked;
+    private int uncovered;
+    private int[] tile;
     private boolean checkCovered = false;
     private boolean checkMarked = false;
     private boolean checkUncovered = false;
     private boolean checkCurrentState = false;
+    public Tile()
+    {
+        covered = 0;
+        marked = 1;
+        uncovered = 2;
+        tile = new int[3];
+        tile[0] = 0;
+        tile[1] = 1;
+        tile[2] = 2;
+    }
     public int getCovered()
     {
         return covered;
@@ -22,10 +31,6 @@ public class Tile
     public int uncocered()
     {
         return uncovered;
-    }
-    public int adjacentMine()
-    {
-        return adjacentMine;
     }
     public boolean checkCurrentState()
     {
@@ -48,34 +53,5 @@ public class Tile
             }
         }
         return checkCurrentState;
-    }
-    public void setTileIsCovered()
-    {
-        if (checkCurrentState() == checkCovered)
-        {
-            System.out.println("The tile is covered");
-            for (int i = 0; i < 1;i++)
-            {
-                tile[0] = 0;
-            }
-        }
-    }
-    public void setTileMarked()
-    {
-        if (checkCurrentState() == checkMarked)
-        {
-            System.out.println("The tile is marked");
-            for (int i = 0; i < 1;i++)
-            {
-                tile[0] = 1;
-            }
-        }
-    }
-    public void setTileUncovered()
-    {
-        if (checkCurrentState() == checkUncovered)
-        {
-            
-        }
     }
 }
