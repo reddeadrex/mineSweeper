@@ -1,57 +1,83 @@
 //Ryan Nguyen
 //Tile
-public class Tile 
+public class Tile
 {
-    private int covered;
-    private int marked;
-    private int uncovered;
-    private int[] tile;
-    private boolean checkCovered = false;
-    private boolean checkMarked = false;
-    private boolean checkUncovered = false;
-    private boolean checkCurrentState = false;
+  protected String tile;
+  protected String marked;
+  protected String uncovered;
+  protected String bomb;
     public Tile()
     {
-        covered = 0;
-        marked = 1;
-        uncovered = 2;
-        tile = new int[3];
-        tile[0] = 0;
-        tile[1] = 1;
-        tile[2] = 2;
+      //assigning values for each diffirent type of tiles
+      bomb = " * ";
+      tile = "   ";
+      marked = " ? ";
+      uncovered = " o ";
     }
-    public int getCovered()
+    public void setBombTile()
     {
-        return covered;
+      tile = bomb;
     }
-    public int getMarked()
+    public void setMarked()
     {
-        return marked;
+      tile = marked;
     }
-    public int uncocered()
+    public void setUncovered()
     {
-        return uncovered;
+      tile = uncovered;
     }
-    public boolean checkCurrentState()
+    public String getCoveredTile()
     {
-        for (int i = 0 ;i < tile.length;i++)
-        {
-            if (tile[i] == 0)
-                {
-                    checkCovered = true;
-                    checkCurrentState = checkCovered;
-                }
-            else if (tile[i] == 1)
-            {
-                checkMarked = true;
-                checkCurrentState = checkMarked;
-            }
-            else if (tile[i] == 2)
-            {
-                checkUncovered = true;
-                checkCurrentState = checkUncovered;
-            }
-        }
-        return checkCurrentState;
+      return tile;
     }
+    public String getMarkedTile()
+    {
+      //return the marked tile
+      return marked;
+    }
+    public String getUncoveredTile()
+    {
+      //return the uncovered tile
+      return uncovered;
+    }
+    public String getBombTile()
+    {
+      //return the tile with bomb in it;
+      return bomb;
+    }
+    public boolean checkForMarked()
+    {
+      //this checks and see if the covered tile is marked, and if it is then set it to true otherwise set it to false
+      if (tile.equals(marked))
+        return true;
+      else
+        return false;
+    }
+    public boolean checkForUncovered()
+    {
+      //this checks and see if the covered tile is uncovered, and if it is then set it to true otherwise set it to false
+      if (tile.equals(uncovered))
+        return true;
+      else
+        return false;
+    }
+    public boolean checkForBomb()
+    {
+      //this checks and see if the covered tile is a bomb, and if it then set it to true otherwise set it to false
+      if (tile.equals(bomb))
+      {
+        setBombTile();
+        return true;
+      }
+      else
+        return false;
+    }
+    public void setBombInTile()
+    {
+
+    }
+  public String toString()
+  {
+    return tile;
+  }
 }
