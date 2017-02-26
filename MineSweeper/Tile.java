@@ -72,10 +72,6 @@ public class Tile
       else
         return false;
     }
-    public void setBombInTile()
-    {
-
-    }
   public String toString()
   {
     return tile;
