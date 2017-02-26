@@ -2,16 +2,17 @@
 //Tile
 public class Tile
 {
-  protected String tile = " # ";
-  protected String marked = " ? ";
-  protected String uncovered = " 0 ";
-  protected String bomb = " * ";
-  public Tile()
+  protected String tile;
+  protected String marked;
+  protected String uncovered;
+  protected String bomb;
+    public Tile()
     {
-        tile = " # ";
-        marked = " ? ";
-        uncovered = " 0 ";
-        bomb = " * ";
+      //assigning values for each diffirent type of tiles
+      bomb = " * |";
+      tile = "  | ";
+      marked = " ? |";
+      uncovered = "| o |";
     }
  
   public void setBombTile()
