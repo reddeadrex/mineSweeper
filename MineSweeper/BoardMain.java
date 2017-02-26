@@ -14,7 +14,7 @@ public class BoardMain
         int column = input.nextInt();
         System.out.print("Amount of Mines: ");
         int numMines = input.nextInt();
-        GameBoard mainBoard = new GameBoard(numMines,row,column);
+      gameBoard mainBoard = new gameBoard(numMines,row,column);
         /*need to go to the loop in order to return the board\
         gotta keep game going my man until you hit a mine 
         either do loop or while loop 
