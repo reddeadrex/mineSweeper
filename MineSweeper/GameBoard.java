@@ -127,16 +127,52 @@ public void setUpBoard()
     }
 }
 public String toString()
-  {
-       for (int i = 0; i < board.length;i++)
-      {
-          for (int j = 0; j < board.length;j++)
+    {
+        System.out.print("   ");
+        int count = 0;
+        for(int j = 0; j < gameBoard.length; j++)
+        {
+            for(int i = 0; i<gameBoard[j].length; i++)
+            {
+                if(count < gameBoard[j].length)
+                {
+                    System.out.print(" " + count + "  ");
+                    count++;
+                }
+            }
+        }
+        
+        
+        for(int i = 0; i<gameBoard.length; i++)
+        {
+          System.out.println("\t");
+          System.out.print("  ");
+            for(int k = 0; k<gameBoard[i].length;k++)
           {
-              System.out.print(board[i][j]);
+              System.out.print("+---");
           }
-          System.out.println();
-      }
-      return "";
-  }
-
+            System.out.print("+");
+            System.out.print("\n" +i + " | ");
+            for(int j = 0; j<gameBoard[0].length; j++)
+            {
+                System.out.print(gameBoard[i][j] = board.getCoveredTile());
+            }
+        }
+        System.out.println(" ");   
+        System.out.print("  ");
+        int count2 = 0;
+        for(int i = 0; i < gameBoard.length; i++)
+        {
+            for(int k = 0; k<gameBoard[i].length;k++)
+            {
+                if(count2 < gameBoard[i].length)
+                {
+                    System.out.print("+---");
+                    count2++;
+                }
+            }
+        }
+        System.out.print("+");
+          return "";
+    }
 }
