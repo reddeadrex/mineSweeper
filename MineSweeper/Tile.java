@@ -1,4 +1,4 @@
-//Ryan Nguyen
+//Ryan Nguyen and Albert Nguyen
 //Tile
 public class Tile
 {
@@ -9,10 +9,10 @@ public class Tile
     public Tile()
     {
       //assigning values for each diffirent type of tiles
-      bomb = " * |";
+      bomb = "* | ";
       tile = "  | ";
-      marked = " ? |";
-      uncovered = "| o |";
+      marked = "? | ";
+      uncovered = "o | ";
     }
  
   public void setBombTile()
