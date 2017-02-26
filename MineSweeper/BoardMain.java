@@ -1,6 +1,4 @@
- 
-
-//Ryan Nguyen
+//Ryan Nguyen and Albert Nguyen
 //test the board
 import java.util.*;
 public class BoardMain
@@ -24,9 +22,8 @@ public class BoardMain
        System.out.println("Type 1 to open the tile and type 2 to mark the tile");
        input.nextLine();
        int response = input.nextInt();
-       System.out.println("Please enter row");
+       System.out.println("Please enter row and column");
        row = input.nextInt();
-       System.out.println("Please enter column");
        column = input.nextInt();
        mainBoard.UserResponse(response, row, column);
        System.out.println(mainBoard);
