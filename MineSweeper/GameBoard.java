@@ -1,5 +1,4 @@
- 
-
+//Albert Nguyen and Ryan Nguyen
 import java.util.*;
 public class gameBoard
 {
@@ -120,7 +119,7 @@ public void setUpBoard()
 {
     for (int i = 0; i < board.length;i++)
     {
-        for (int j = 0; j < board.length;j++)
+        for (int j = 0; j < board[i].length;j++)
         {
             board[i][j] = new Tile();
         }
