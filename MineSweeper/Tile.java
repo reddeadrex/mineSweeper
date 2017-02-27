@@ -6,15 +6,35 @@ public class Tile
   protected String marked;
   protected String uncovered;
   protected String bomb;
-    public Tile()
+  protected boolean isMarked;
+  protected boolean isBomb;
+  protected int counter;
+  public Tile()
     {
       //assigning values for each diffirent type of tiles
       bomb = "* | ";
       tile = "  | ";
       marked = "? | ";
       uncovered = "o | ";
+      counter = 0;
     }
- 
+  public void numberOfMines()
+  {
+      counter++;
+  }
+  public void setNumberOfMines()
+  {
+      tile = "" + counter;
+  }
+  public String getCoveredTile()
+  {
+      tile = "  | ";
+      return tile;
+  }
+  public String getTileNumberOfMines()
+  {
+      return tile;
+  }
   public void setBombTile()
     {
       tile = bomb;
@@ -27,10 +47,18 @@ public class Tile
     {
       tile = uncovered;
     }
+  public void setCovered()
+  {
+      tile = "  | ";
+  }
   public String getTile()
     {
       return tile;
     }
+  public String getTile2()
+  {
+      return bomb;
+  }
   public String getMarkedTile()
    {
       //return the marked tile
@@ -46,6 +74,18 @@ public class Tile
       //return the tile with bomb in it;
       return bomb;
     }
+  public boolean isItBomb()
+  {
+      if (tile == bomb)
+        return true;
+      return false;
+  }
+  public boolean isItMarked()
+  {
+      if (tile == marked)
+        return true;
+      return false;
+  }
   public boolean checkForMarked()
     {
       //this checks and see if the covered tile is marked, and if it is then set it to true otherwise set it to false
