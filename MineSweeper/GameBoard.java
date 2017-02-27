@@ -18,30 +18,30 @@ public class GameBoard
   }
   //this method will instantiate the mines on the board
   public void distributeMines()
-  {
+{
    //new Algorith: go through the loops and set bombs to random tiles
-   for (int i = 0 ; i < mines;i++)
+   for (int i = 0 ; i <= mines;i++)
    {
        for (int j = 0; j < 1;j++)
        {
            //set the tile at the specifc location to a bomb tile
-           board[(int)(Math.random() * rows)][(int)(Math.random() * columns)].setBombTile();
+           board[(int)(Math.random() * board.length)][(int)(Math.random() * board[0].length)].setBombTile();
        }
    }
  
-//     //this will store the position of the mines in a 2d array
-//     for (int i = 0; i < mines;i++)
-//     {
-//       for (int j = 0; j < 2;j++)
-//     {
-//         //this 2d array takes in the position of where the mine will be 
-//         positionOfMines[i][j] = (int)(mines * Math.random());
-//         board[positionOfMines[i][j]][positionOfMines[i][j]].setBombTile();
-//         //this is where the board will refer back to the 2d array called positionOfmines and call the method getBombTile() in order to change the value of
-//         //covered tile to bomb tile
-//     }
-//     }
-  }
+    //     //this will store the position of the mines in a 2d array
+    //     for (int i = 0; i < mines;i++)
+    //     {
+    //       for (int j = 0; j < 2;j++)
+    //     {
+    //         //this 2d array takes in the position of where the mine will be 
+    //         positionOfMines[i][j] = (int)(mines * Math.random());
+    //         board[positionOfMines[i][j]][positionOfMines[i][j]].setBombTile();
+    //         //this is where the board will refer back to the 2d array called positionOfmines and call the method getBombTile() in order to change the value of
+    //         //covered tile to bomb tile
+    //     }
+    //     }
+}
   /*Algorithm: First let's loop through the board, and check for the first index of the mines and the index + 1 which is the one right next to it
   and see if the one next to it is a bomb if it is then we will simply update a counter and print it at the end to displace how many bombs are next to it
   public void adJacentMines
@@ -51,47 +51,69 @@ public class GameBoard
     //first let's make a couner that will keep up how many mines are in the vicinity of our one mine
     //now let's go through a loop to check for each element in the index because we don't really know where the mines are exactly
     //checks lower diagonal right
-    if (board[row+1][column+1].getTile().equals(board[row+1][column+1].getBombTile()))
+    if (row + 1 < board.length & column + 1 < board.length)
           {
             //we will simply update the counter to see how many mines are around
-            board[row][column].numberOfMines();
-            
+            if(board[row+1][column+1].getTile().equals(board[row+1][column+1].getBombTile()))
+            {
+                board[row][column].numberOfMines();
+            }
           }
     //this checks upper left diagonal
-    if (board[row-1][column-1].getTile().equals(board[row-1][column+1].getBombTile()))
+    if (row - 1 >= 0 & column - 1 >= 0)
           {
-            board[row][column].numberOfMines();
+              if(board[row-1][column-1].getTile().equals(board[row-1][column-1].getBombTile()))
+              {
+                  board[row][column].numberOfMines();
+              }
           }
     //this checks to the right
-    if (board[row][column+1].getTile().equals(board[row][column+1].getBombTile()))
+    if (row >= 0 & column + 1 < board[0].length)
           {
-           board[row][column].numberOfMines();
-           
+           if(board[row][column+1].getTile().equals(board[row][column+1].getBombTile()))
+           {
+               board[row][column].numberOfMines();
+           }
           }
     //this checks to the left
-    if (board[row][column-1].getTile().equals(board[row][column-1].getBombTile()))
+    if (row > 0 & column - 1 > 0)
        {
-            board[row][column].numberOfMines();
+            if(board[row][column-1].getTile().equals(board[row][column-1].getBombTile()))
+            {
+                board[row][column].numberOfMines();
+            }
        }
     //this checks the top tile
-    if (board[row-1][column].getTile().equals(board[row-1][column].getBombTile()))
+    if (row - 1 >= 0 & column >= 0)
        {
-            board[row][column].numberOfMines();
+            if(board[row-1][column].getTile().equals(board[row-1][column].getBombTile()))
+            {
+                board[row][column].numberOfMines();
+            }
        }
     //this checks the bottom tile
-    if (board[row+1][column].getTile().equals(board[row+1][column].getBombTile()))
+    if (row + 1 < board.length & column < board[0].length)
       {
-            board[row][column].numberOfMines();
+            if(board[row+1][column].getTile().equals(board[row+1][column].getBombTile()))
+            {
+                board[row][column].numberOfMines();
+            }
       }
     //this shows upper diagonal right
-    if (board[row-1][column+1].getTile().equals(board[row+1][column].getBombTile()))
+    if (row - 1 >= 0 & column + 1 < board[0].length)
     {
-            board[row][column].numberOfMines();
+            if(board[row-1][column+1].getTile().equals(board[row-1][column+1].getBombTile()))
+            {
+                board[row][column].numberOfMines();
+            }
     }
     //this shows bottom diagnoal left 
-    if (board[row+1][column-1].getTile().equals(board[row+1][column-1].getBombTile()))
+    if (row + 1 < board.length & column - 1 >= 0)
     {
-            board[row][column].numberOfMines();
+            if(board[row+1][column-1].getTile().equals(board[row+1][column-1].getBombTile()))
+            {
+                board[row][column].numberOfMines();
+            }
     }
 }
 //this method gives the user the option to either uncover, mark, or unmark
@@ -106,7 +128,7 @@ public void UserResponse(int response,int row, int column)
         }
         else if (isWinner(row,column) == true)
         {
-            System.out.println("It's not like i love you! BAKA!!!");
+            System.out.println("It's not like I love you! BAKA!!!");
         }
         else
         {
