@@ -1,4 +1,4 @@
-//Ryan Nguyen
+//Ryan Nguyen and Albert Nguyen
 //test the board
 import java.util.*;
 public class BoardMain
@@ -11,15 +11,21 @@ public class BoardMain
         System.out.print("Column dimension: ");
         int column = input.nextInt();
         System.out.print("Amount of Mines: ");
-      	int numMines = input.nextInt();
-        GameBoard mainBoard = new GameBoard(numMines,row,column);
+        int numMines = input.nextInt();
+      gameBoard mainBoard = new gameBoard(numMines,row,column);
         /*need to go to the loop in order to return the board\
-      	gotta keep game going my man until you hit a mine 
+        gotta keep game going my man until you hit a mine 
         either do loop or while loop 
         */
-        for (int i = 0; i < 1;i++)
-        {
-            mainBoard.getBoard();
-        }
+       mainBoard.setUpBoard();
+       System.out.println(mainBoard);
+       System.out.println("Type 1 to open the tile and type 2 to mark the tile");
+       input.nextLine();
+       int response = input.nextInt();
+       System.out.println("Please enter row and column");
+       row = input.nextInt();
+       column = input.nextInt();
+       mainBoard.UserResponse(response, row, column);
+       System.out.println(mainBoard);
     }
 }

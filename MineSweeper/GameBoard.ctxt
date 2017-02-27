@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.params=mine\ row\ column
-comment0.target=GameBoard(int,\ int,\ int)
-comment1.params=
-comment1.target=void\ getBoard()
+comment0.target=gameBoard(int,\ int,\ int)
+comment1.params=response\ row\ column
+comment1.target=void\ UserResponse(int,\ int,\ int)
+comment1.text=Algorithm\:\ First\ let's\ loop\ through\ the\ board,\ and\ check\ for\ the\ first\ index\ of\ the\ mines\ and\ the\ index\ +\ 1\ which\ is\ the\ one\ right\ next\ to\ it\r\n\ \ and\ see\ if\ the\ one\ next\ to\ it\ is\ a\ bomb\ if\ it\ is\ then\ we\ will\ simply\ update\ a\ counter\ and\ print\ it\ at\ the\ end\ to\ displace\ how\ many\ bombs\ are\ next\ to\ it\r\n\ \ public\ void\ adJacentMines\r\n
 comment2.params=
-comment2.target=void\ distributeMines()
+comment2.target=void\ setUpBoard()
 comment3.params=
-comment3.target=void\ countForAdjacentMines()
-comment3.text=Algorithm\:\ First\ let's\ loop\ through\ the\ gameBoard,\ and\ check\ for\ the\ first\ index\ of\ the\ mines\ and\ the\ index\ +\ 1\ which\ is\ the\ one\ right\ next\ to\ it\r\n\ \ and\ see\ if\ the\ one\ next\ to\ it\ is\ a\ bomb\ if\ it\ is\ then\ we\ will\ simply\ update\ a\ counter\ and\ print\ it\ at\ the\ end\ to\ displace\ how\ many\ bombs\ are\ next\ to\ it\r\n\ \ public\ void\ adJacentMines\r\n
+comment3.target=java.lang.String\ toString()
 numComments=4
