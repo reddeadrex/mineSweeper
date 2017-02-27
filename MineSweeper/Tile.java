@@ -24,7 +24,7 @@ public class Tile
   }
   public void setNumberOfMines()
   {
-      tile = "" + counter;
+      tile = Integer.toString(counter) + " | ";
   }
   public String getCoveredTile()
   {
